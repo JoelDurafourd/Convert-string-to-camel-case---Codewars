@@ -7,9 +7,9 @@ The next words should be always capitalized.
 
 
 def to_camel_case(str)
-    new_array = str.gsub("-", " ").gsub("_", " ").split(" ").map(&:capitalize).join
-    return '' if new_array.empty?
-    new_array = new_array[0].downcase + new_array[1..-1]
+    new_array = str.gsub("-", " ").gsub("_", " ").split(" ") #convert all dashes and underscores to spaces. 
+    return '' if new_array.empty? #exit out if the given array is nil 
+    new_array = new_array[0] + new_array[1..-1].map(&:capitalize).join #split the array and capitalize the cases, join
     return new_array
 end
 
